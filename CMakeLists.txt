@@ -21,7 +21,7 @@ endforeach()
 add_custom_command(
     OUTPUT ${GENERATED_HEADERS} ${CMAKE_CURRENT_BINARY_DIR}/msg/generated_files.stamp
     COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/msg/"
-    COMMAND lcm-gen --cpp --cpp-hpath "${CMAKE_CURRENT_BINARY_DIR}/msg/" ${LCM_FILES}
+    COMMAND lcm-gen --lazy --cpp --cpp-hpath "${CMAKE_CURRENT_BINARY_DIR}/msg/" ${LCM_FILES}
     COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/msg/generated_files.stamp
     DEPENDS ${LCM_FILES}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
